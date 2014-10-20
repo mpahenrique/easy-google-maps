@@ -1,32 +1,33 @@
 var map;
 var googleMaps = {
-    initialize: function (latitude, longitude) {
-        var center = new google.maps.LatLng(latitude, longitude);  
+    initialize: function(latitude, longitude){
+        var center = new google.maps.LatLng(latitude, longitude);
         var mapOptions = {
             center: center,
-            zoom: 15,
-            title: 'Meu Local',
+            zoom: 1,
+            title: "My Local",
             disableDefaultUI: true,
             mapTypeId: google.maps.MapTypeId.ROADMAP
         };
-        map = new google.maps.Map(document.getElementById("maps"),
-            mapOptions);
+        var divMapElement = document.getElementById("mapa");
+        
+        map = new google.maps.Map(divMapElement, mapOptions);
+        
         new google.maps.Marker({
-            position: new google.maps.LatLng(latitude, longitude),
+            position: center,
             map: map
         });
+         
     },
-    makeMarker: function (latitude, longitude){
-            var marker = new google.maps.Marker({
-                position: new google.maps.LatLng(latitude, longitude),
-                title: 'My Marker',
-                icon: '',
-                map: map
-            });
-            google.maps.event.addListener(marker, 'click', function() {
-                //anything here
-                console.log(this.position.B);
-                console.log(this.position.k);
-            });
+    pin: function(latitude, longitude){
+        var position = new google.maps.LatLng(latitude, longitude);
+        if(latitude == "" || longitude == ""){
+            alert("Please, fill the fields correctly!");
+            return;
+        }
+        new google.maps.Marker({
+            position: position,
+            map: map
+        }); 
     }
 }
