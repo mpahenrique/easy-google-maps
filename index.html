@@ -67,8 +67,8 @@
             navigator.geolocation.getCurrentPosition(function(e){
                 var coords = e.coords;
                 googleMaps.initialize(coords.latitude, coords.longitude);
-            }, function(){
-                alert('Error');
+            }, function(e){
+                alert('Error: ', e);
             });
             $('#pin').click(function(){
                 googleMaps.pin(document.getElementById('lat').value, document.getElementById('lon').value);
