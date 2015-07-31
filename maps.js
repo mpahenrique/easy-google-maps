@@ -21,7 +21,7 @@ var googleMaps = {
     },
     pin: function(latitude, longitude){
         var position = new google.maps.LatLng(latitude, longitude);
-        if(latitude == "" || longitude == ""){
+        if(!latitude || !longitude){
             alert("Please, fill the fields correctly!");
             return;
         }
