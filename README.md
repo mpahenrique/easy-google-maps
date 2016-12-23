@@ -1,31 +1,75 @@
-google-maps-sample
-==================
+# Easy Google Maps
 
-Google Maps Sample
+Google maps made simple.
+With this library you'll can use simple methods that allows to create quickly google maps. You can also create custom methods to specific actions.
 
-Carregando o mapa:
+Using Easy Google Maps you can:
+  - Create one or more custom maps
+  - Create markers
+  - Create custom methods
 
-=> Crie um elemento de bloco identificado em seu HTML com largura e alturas > 0.
+### Dependencies
 
-=> Inclua o Script do Google Maps((<script src="https://maps.googleapis.com/maps/api/js?sensor=true"></script>))
+Easy Google Maps uses Google Maps v3 script:
 
-=> Inclua o Script maps.js ((<script src="maps.js"></script>))
+* [google-maps-v3] - Google Maps JavaScript Library
 
-=> Quando o documento estiver pronto, inicialize o mapa com a função "googleMaps.initialize", que recebe latitude
-e longitude como parâmetros. Criando um marcador e centralizando o mapa naquela posição. Exemplo:
+### Starting
 
-  googleMaps.initialize(25, 25);
-  
-_______________________________________________________________________________________________________________________
+###### Using like a module
 
-Criando marcadores no mapa:
+```js
+var egm = new require('./path/to/easy-google-maps');
+```
+###### Using like a library
+* In your html
+```html
+<script type="text/javascript" src="/path/to/easy-google-maps.js"></script>
+```
+* In your JavaScript
+```js
+var easyGoogleMaps = new EasyGoogleMaps();
+```
+
+### Customization
+###### Using like a module
+
+```js
+var easyGoogleMaps = require('./path/to/easy-google-maps');
+    easyGoogleMaps.prototype.customMethod = function () {
+         // your custom method here
+    }
+var egm = new easyGoogleMaps();
+```
+
+###### Using like a library
+* In your html
+```html
+<script type="text/javascript" src="/path/to/easy-google-maps.js"></script>
+```
+* In your JavaScript
+```js
+EasyGoogleMaps..prototype.customMethod = function () {
+     // your custom method here
+}
+var easyGoogleMaps = new EasyGoogleMaps();
+```
+
+### Creating a map
+* In your html
+```html
+<div id="map"></div>    
+```
+* In your JavaScript
+```js
+var sampleMap = egm.createMap('map', 59.8937803, 10.6446934, { zoom: 14 }); // id, latitude, longitude, options (optional)
+```
+
+### Creating a marker (pin)
+* In your JavaScript
+```js
+egm.pin(sampleMap, 59.8937803, 10.6446934, { title: 'Hello World' }); // map, latitude, longitude, options  (optional)
+```
 
 
-==> Considerando o mapa já inicializado, chame a função "googleMaps.pin", que recebe latitude e longitude como
-parâmetros. Exemplo:
-
-  googleMaps.pin(-10, -20);
-  
-_______________________________________________________________________________________________________________________
-  
-
+   [google-maps-v3]: <https://developers.google.com/maps/documentation/javascript/libraries>

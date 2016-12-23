@@ -1,8 +1,8 @@
 'use strict';
 
-class GoogleMapsSample{}
+class EasyGoogleMaps{}
 
-GoogleMapsSample.prototype.createMap = function (elmId, latitude, longitude, options){
+EasyGoogleMaps.prototype.createMap = function (elmId, latitude, longitude, options){
 
     if(!elmId || typeof latitude == 'undefined' || typeof longitude == 'undefined') { 
         throw new Error('Missing required arguments.'); 
@@ -19,7 +19,7 @@ GoogleMapsSample.prototype.createMap = function (elmId, latitude, longitude, opt
     return new google.maps.Map(document.getElementById(elmId), mapOptions);
 }
 
-GoogleMapsSample.prototype.pin = function (map, latitude, longitude, options){
+EasyGoogleMaps.prototype.pin = function (map, latitude, longitude, options){
 
     if(!map || !latitude || !longitude) { 
         throw new Error('Missing required arguments.'); 
@@ -29,7 +29,7 @@ GoogleMapsSample.prototype.pin = function (map, latitude, longitude, options){
     var position = new google.maps.LatLng(latitude, longitude)
     ,   markerOptions = {
         position: position,
-        map: this.map
+        map: map
     };
     markerOptions.extend(options);
 
@@ -37,7 +37,7 @@ GoogleMapsSample.prototype.pin = function (map, latitude, longitude, options){
 }
 
 /*
-    GoogleMapsSample.prototype.customMethod = function(map){
+    EasyGoogleMaps.prototype.customMethod = function(map){
         // your custom method here
     }
 */
@@ -49,7 +49,7 @@ Object.prototype.extend = function(obj){
 }
 
 if(this.module && this.module.exports){
-    module.exports = new GoogleMapsSample();
+    module.exports = EasyGoogleMaps;
 } else {
-    window.googleMapsSample = new GoogleMapsSample();
+    window.EasyGoogleMaps = EasyGoogleMaps;
 }
