@@ -49,7 +49,7 @@ var egm = new easyGoogleMaps();
 ```
 * In your JavaScript
 ```js
-EasyGoogleMaps..prototype.customMethod = function () {
+EasyGoogleMaps.prototype.customMethod = function () {
      // your custom method here
 }
 var egm = new EasyGoogleMaps();
