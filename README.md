@@ -68,7 +68,7 @@ var sampleMap = egm.createMap('map', 59.8937803, 10.6446934, { zoom: 14 }); // i
 ### Creating a marker (pin)
 * In your JavaScript
 ```js
-egm.pin(sampleMap, 59.8937803, 10.6446934, { title: 'Hello World' }); // map, latitude, longitude, options  (optional)
+egm.pin(sampleMap, 59.8937803, 10.6446934, { title: 'Hello World' }); // map, latitude, longitude, options (optional)
 ```
 
 
