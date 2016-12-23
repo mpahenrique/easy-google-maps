@@ -28,7 +28,7 @@ var egm = new require('./path/to/easy-google-maps');
 ```
 * In your JavaScript
 ```js
-var easyGoogleMaps = new EasyGoogleMaps();
+var egm = new EasyGoogleMaps();
 ```
 
 ### Customization
@@ -52,7 +52,7 @@ var egm = new easyGoogleMaps();
 EasyGoogleMaps..prototype.customMethod = function () {
      // your custom method here
 }
-var easyGoogleMaps = new EasyGoogleMaps();
+var egm = new EasyGoogleMaps();
 ```
 
 ### Creating a map
